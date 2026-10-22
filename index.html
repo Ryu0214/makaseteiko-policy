@@ -1,0 +1,355 @@
+<!-- design: legal/document treatment, utilitarian -->
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>まかせていこ プライバシーポリシー</title>
+<style>
+/*
+  layout: single-column document with a sticky section nav; generous
+  measure-width body copy; quiet neutral palette with one ink accent
+*/
+:root {
+  --bg: #faf9f6;
+  --surface: #ffffff;
+  --ink: #1f1d1a;
+  --ink-soft: #55504a;
+  --line: #e3dfd6;
+  --accent: #8a6a4a;
+  --accent-soft: #f1e7d9;
+  --font-display: 'Zen Old Mincho', 'Noto Serif JP', serif;
+  --font-body: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #171512;
+    --surface: #1f1c18;
+    --ink: #f0ece4;
+    --ink-soft: #c2bbae;
+    --line: #38342c;
+    --accent: #d2ab7e;
+    --accent-soft: #2c241a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171512;
+  --surface: #1f1c18;
+  --ink: #f0ece4;
+  --ink-soft: #c2bbae;
+  --line: #38342c;
+  --accent: #d2ab7e;
+  --accent-soft: #2c241a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.85;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); }
+
+.topbar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding-block: 10px;
+  margin: 0 -16px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.topbar-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+}
+.topbar-inner a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+.topbar-inner a:hover { color: var(--accent); }
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-block: 40px 80px;
+}
+
+header.hero {
+  margin-bottom: 48px;
+}
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  margin: 10px 0 6px;
+  text-wrap: balance;
+}
+.meta-line {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+section {
+  margin-bottom: 64px;
+  scroll-margin-top: 70px;
+}
+section h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+section h3 {
+  font-size: 1.05rem;
+  margin: 28px 0 10px;
+  color: var(--ink);
+}
+p, li { color: var(--ink-soft); max-width: 640px; }
+p { margin: 0 0 14px; }
+ul, ol { padding-left: 1.3em; margin: 0 0 14px; }
+li { margin-bottom: 6px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 18px 0;
+}
+.card dt {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+.card dd {
+  margin: 2px 0 14px;
+  color: var(--ink);
+}
+.card dd:last-child { margin-bottom: 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin: 18px 0;
+}
+.table-wrap { overflow-x: auto; }
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th { color: var(--ink-soft); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.02em; }
+
+.note {
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+.note strong { color: var(--accent); }
+
+.contact-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.copyline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+button.copy {
+  font-size: 0.78rem;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink-soft);
+  border-radius: 6px;
+  padding: 3px 9px;
+  cursor: pointer;
+  font-family: inherit;
+}
+button.copy:hover { border-color: var(--accent); color: var(--accent); }
+
+footer {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@500;600&display=swap">
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="#privacy">プライバシーポリシー</a>
+    <a href="#deletion">データ削除手順</a>
+    <a href="#terms">利用規約</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+</nav>
+
+<main>
+  <header class="hero">
+    <div class="eyebrow">まかせていこ ／ Instagram DM AI 対応サービス</div>
+    <h1>プライバシーポリシー・データ削除手順・利用規約</h1>
+    <p class="meta-line">最終更新日：2026年10月22日</p>
+  </header>
+
+  <section id="privacy">
+    <h2>1. プライバシーポリシー</h2>
+
+    <h3>1-1. 事業者情報</h3>
+    <div class="card">
+      <dl>
+        <dt>屋号</dt><dd>まかせていこ</dd>
+        <dt>運営者</dt><dd>山村瑠斗（個人事業主）</dd>
+        <dt>提供サービス</dt><dd>AI導入・業務自動化・業務効率化支援</dd>
+        <dt>対象Instagramアカウント</dt><dd>@makaseteiko.group</dd>
+        <dt>連絡先</dt><dd>yamamura.makaseteiko.consulting@gmail.com</dd>
+      </dl>
+    </div>
+
+    <h3>1-2. 取得する情報</h3>
+    <p>当サービスは、Instagramの公式API（Messaging API）を通じて、以下の情報のみを取得します。</p>
+    <ul>
+      <li>メッセージ送信者のInstagramアカウントを識別するID（Instagram-scoped ID。氏名・電話番号・メールアドレス等の個人情報ではありません）</li>
+      <li>送信されたDM（ダイレクトメッセージ）の本文</li>
+      <li>メッセージの送受信日時</li>
+    </ul>
+    <p>当サービスは、これら以外のInstagramプロフィール情報（氏名、投稿内容、フォロー関係等）を取得・保存しません。</p>
+
+    <h3>1-3. 利用目的と処理の流れ</h3>
+    <p>取得した情報は、Instagramアカウント宛てに届いたお問い合わせへの返信対応のためにのみ利用します。処理は次の順序で行われます。</p>
+    <ol>
+      <li>Instagram公式Webhookを通じて、新しいDMを受信します（受信時に署名検証を行い、Meta以外からの不正な送信を排除します）。</li>
+      <li>過去の会話履歴と合わせて、AI（生成AIモデル）が返信文の案を作成します。</li>
+      <li>作成された返信案は、運営者（山村瑠斗）にSlackを通じて通知され、運営者が内容を確認します。</li>
+      <li>運営者が承認・修正・却下のいずれかを選択します。<strong>運営者の承認操作とは別に、Instagramへ返信が自動送信される機能は現時点では実装しておらず、送信は行われません。</strong>返信は現在、運営者が内容を確認した上で手動で行います。</li>
+      <li>対応結果（承認・修正内容・却下等の記録）は、記録管理のためGoogleスプレッドシートに保存します。</li>
+    </ol>
+    <div class="note">
+      <strong>現在の実装状況について：</strong>本サービスは開発・検証段階にあり、Instagramへの返信の自動送信機能は実装されていません。AIが生成するのは「返信の案」のみで、実際に送信される内容は運営者が確認したものに限られます。この状況が変わり自動送信を実装する場合は、本ページを更新してお知らせします。
+    </div>
+
+    <h3>1-4. 外部サービスへのデータ送信</h3>
+    <p>取得したメッセージ内容等は、サービス提供のために以下の外部サービスへ送信・保存されます。各サービスの処理は、それぞれの事業者のプライバシーポリシーに従います。</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>送信先</th><th>送信される情報</th><th>目的</th></tr></thead>
+        <tbody>
+          <tr><td>Meta（Instagram Messaging API）</td><td>送受信するメッセージの基礎データ</td><td>DMの受信・将来的な送信に関するAPI連携</td></tr>
+          <tr><td>n8n（ワークフロー実行基盤／n8n Cloud）</td><td>受信メッセージ本文、送信者ID、会話履歴</td><td>処理全体のオーケストレーション（自動処理の実行）</td></tr>
+          <tr><td>AIモデル提供事業者（Anthropic。n8n Cloud付属のAI Gateway経由）</td><td>メッセージ本文、会話履歴</td><td>返信文案の生成</td></tr>
+          <tr><td>Slack</td><td>メッセージ本文、AI生成の返信案</td><td>運営者への承認依頼通知</td></tr>
+          <tr><td>Google（Googleスプレッドシート）</td><td>メッセージ本文、対応結果、返信文</td><td>対応履歴の記録・管理</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>当サービスは、取得した情報を上記以外の第三者に提供・販売することはありません。</p>
+
+    <h3>1-5. 保存期間</h3>
+    <p>取得したメッセージ内容・対応履歴は、お問い合わせへの対応およびサービス品質の確認に必要な期間、Googleスプレッドシート上に保存します。現時点では、受信から<strong>最長1年間</strong>を保存の目安とし、それ以降のデータは運営者が定期的に削除します。</p>
+    <div class="note"><strong>注記：</strong>この保存期間はサービス開発段階における運営者の現時点の運用方針であり、今後変更される場合があります。変更した場合は本ページを更新します。保存期間を短縮したい場合や即時削除をご希望の場合は、下記「データ削除手順」からご連絡ください。</div>
+
+    <h3>1-6. 情報の管理</h3>
+    <p>取得した情報は、アクセス権を持つ運営者（山村瑠斗）のみが確認できる環境（n8n Cloud・Google・Slackの各アカウント）で管理し、適切なアクセス制限のもとで取り扱います。</p>
+
+    <h3>1-7. プライバシーポリシーの変更</h3>
+    <p>本ポリシーの内容は、サービス内容の変更や法令の改正等に応じて見直すことがあります。重要な変更がある場合は、本ページの「最終更新日」を更新してお知らせします。</p>
+  </section>
+
+  <section id="deletion">
+    <h2>2. データ削除手順</h2>
+    <p>ご自身に関するメッセージ内容・対応履歴の削除をご希望の場合は、以下の手順でご連絡ください。</p>
+    <ol>
+      <li>下記の連絡先（メール）宛てに、「データ削除依頼」である旨を明記してご連絡ください。</li>
+      <li>対象を特定するため、DMを送信したInstagramアカウントのユーザー名をお知らせください（本人確認のため使用し、確認後は削除します）。</li>
+      <li>運営者（山村瑠斗）が本人からの依頼であることを確認のうえ、該当するメッセージ内容・対応履歴をGoogleスプレッドシートおよび関連する保存先から削除します。</li>
+      <li>削除完了後、ご連絡いただいたメールアドレス宛てに完了のご連絡をいたします。</li>
+    </ol>
+    <p>通常、ご連絡から<strong>7営業日以内</strong>に削除を完了します。</p>
+  </section>
+
+  <section id="terms">
+    <h2>3. 利用規約</h2>
+    <h3>3-1. サービスの内容</h3>
+    <p>本サービスは、Instagramアカウント「@makaseteiko.group」宛てに届いたお問い合わせに対し、運営者（まかせていこ・山村瑠斗）が内容を確認した上で対応するための支援システムです。AIは返信文の案を作成する目的でのみ利用され、実際の対応内容は運営者が確認・判断します。</p>
+
+    <h3>3-2. 保証の限定</h3>
+    <p>本サービスで作成される返信案は、AIによる自動生成であり、内容の正確性・完全性を保証するものではありません。実際の返信は運営者の確認・判断を経て行われます。</p>
+
+    <h3>3-3. 禁止事項</h3>
+    <p>本サービスを通じたお問い合わせにおいて、法令に違反する内容、第三者の権利を侵害する内容、または業務の妨害を目的とした内容の送信はご遠慮ください。</p>
+
+    <h3>3-4. 規約の変更</h3>
+    <p>本規約は、サービス内容の変更等に応じて見直すことがあります。重要な変更がある場合は、本ページを更新してお知らせします。</p>
+  </section>
+
+  <section id="contact">
+    <h2>4. お問い合わせ</h2>
+    <div class="contact-box">
+      <div><strong>まかせていこ</strong>（運営者：山村瑠斗）</div>
+      <div class="copyline">
+        <span id="email-text">yamamura.makaseteiko.consulting@gmail.com</span>
+        <button class="copy" type="button" onclick="copyEmail(this)">コピー</button>
+      </div>
+      <div>Instagram：@makaseteiko.group</div>
+    </div>
+  </section>
+
+  <footer>
+    © まかせていこ（山村瑠斗）
+  </footer>
+</main>
+
+<script>
+function copyEmail(btn) {
+  var text = document.getElementById('email-text').textContent;
+  var done = function () {
+    var orig = btn.textContent;
+    btn.textContent = 'コピーしました';
+    setTimeout(function () { btn.textContent = orig; }, 1500);
+  };
+  try {
+    navigator.clipboard.writeText(text).then(done).catch(function () { fallbackCopy(text, done); });
+  } catch (e) {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done) {
+  try {
+    var range = document.createRange();
+    var el = document.getElementById('email-text');
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    done();
+  } catch (e) {}
+}
+</script>
